@@ -1,0 +1,2 @@
+# Automated_Testing_using_Cypress_with_Allure_Report
+only for STTPK3023 SOFTWARE TESTING

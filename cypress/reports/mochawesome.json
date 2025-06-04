@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-04-30T01:42:18.628Z",
+    "end": "2025-04-30T01:42:49.429Z",
+    "duration": 30801,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5f8a85e9-bc8f-4e51-be7b-1d695f42d79e",
+      "title": "",
+      "fullFile": "cypress\\e2e\\add_classroom.cy.js",
+      "file": "cypress\\e2e\\add_classroom.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "c937b894-8aca-4a43-9590-9cebdd868bd5",
+          "title": "Add Classroom",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add a classroom with a valid number",
+              "fullTitle": "Add Classroom Add a classroom with a valid number",
+              "timedOut": null,
+              "duration": 12523,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\add_classroom.cy.js\"\n}",
+              "code": "cy.get(\"#name\").type('SOC Lab 5', {\n  delay: 100\n});\ncy.get(\"#student_count\").type('30', {\n  delay: 200\n});\ncy.get(\"#btnSubmit\").click();\n//Check if success message appears\ncy.get('#insert_Success .modal-body').should('contain', 'Your information has been successfully inserted in our database');",
+              "err": {},
+              "uuid": "35de7326-c47a-41e9-8271-27f116874e0b",
+              "parentUUID": "c937b894-8aca-4a43-9590-9cebdd868bd5",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add a classroom with invalid number",
+              "fullTitle": "Add Classroom Add a classroom with invalid number",
+              "timedOut": null,
+              "duration": 15277,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\e2e\\\\add_classroom.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\add_classroom.cy.js\\\\Add Classroom -- Add a classroom with invalid number (failed).png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.get(\"#name\").type('SOC Lab 6', {\n  delay: 100\n});\ncy.get(\"#student_count\").type('abc', {\n  delay: 200\n});\ncy.get(\"#btnSubmit\").click();\n// Force assertion: it should NOT show the success message\ncy.get('#insert_Success .modal-body').should('not.contain', 'successfully inserted');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<div.modal-body.bgColorWhite>' not to contain 'successfully inserted'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<div.modal-body.bgColorWhite>' not to contain 'successfully inserted'\n    at Context.eval (webpack://cypress-sms/./cypress/e2e/add_classroom.cy.js:32:46)",
+                "diff": null
+              },
+              "uuid": "b0905f1e-8cb6-4657-ac69-807f13d47bf5",
+              "parentUUID": "c937b894-8aca-4a43-9590-9cebdd868bd5",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "35de7326-c47a-41e9-8271-27f116874e0b"
+          ],
+          "failures": [
+            "b0905f1e-8cb6-4657-ac69-807f13d47bf5"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 27800,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

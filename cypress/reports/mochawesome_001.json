@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-04-30T01:43:00.337Z",
+    "end": "2025-04-30T01:43:30.253Z",
+    "duration": 29916,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "cfcf8821-f6a1-4000-954c-7ca8582f9865",
+      "title": "",
+      "fullFile": "cypress\\e2e\\edit_profile.cy.js",
+      "file": "cypress\\e2e\\edit_profile.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a9e7035a-7b26-460a-91e6-71be22b71cea",
+          "title": "Edit Profile",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Edit Admin Profile with a valid Full Name",
+              "fullTitle": "Edit Profile Edit Admin Profile with a valid Full Name",
+              "timedOut": null,
+              "duration": 12660,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\edit_profile.cy.js\"\n}",
+              "code": "cy.get(\"#full_name1\").click().clear().type('Admin Correct', {\n  delay: 200\n});\ncy.get('button').contains('Update').click();\n//Check if success message appears\ncy.get('#update_Success .modal-body').should('contain', 'successfully updated');",
+              "err": {},
+              "uuid": "1579798d-84e0-43aa-bc68-1571b9b31922",
+              "parentUUID": "a9e7035a-7b26-460a-91e6-71be22b71cea",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Edit Admin Profile with Invalid Full Name - contains invalid characters",
+              "fullTitle": "Edit Profile Edit Admin Profile with Invalid Full Name - contains invalid characters",
+              "timedOut": null,
+              "duration": 14586,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\e2e\\\\edit_profile.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\edit_profile.cy.js\\\\Edit Profile -- Edit Admin Profile with Invalid Full Name - contains invalid characters (failed).png\"\n      ]\n    ]\n  }\n]",
+              "code": "cy.get(\"#full_name1\").click().clear().type('Admin123!@#', {\n  delay: 200\n});\ncy.get('button').contains('Update').click();\ncy.get('#update_Success .modal-body').should('not.contain', 'successfully updated');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<div.modal-body.bgColorWhite>' not to contain 'successfully updated'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<div.modal-body.bgColorWhite>' not to contain 'successfully updated'\n    at Context.eval (webpack://cypress-sms/./cypress/e2e/edit_profile.cy.js:30:46)",
+                "diff": null
+              },
+              "uuid": "1c8f3c69-557f-46af-a79a-570346fc9247",
+              "parentUUID": "a9e7035a-7b26-460a-91e6-71be22b71cea",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1579798d-84e0-43aa-bc68-1571b9b31922"
+          ],
+          "failures": [
+            "1c8f3c69-557f-46af-a79a-570346fc9247"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 27246,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

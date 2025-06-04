@@ -1,0 +1,129 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 1,
+    "pending": 0,
+    "failures": 1,
+    "start": "2025-04-30T01:43:58.849Z",
+    "end": "2025-04-30T01:44:24.650Z",
+    "duration": 25801,
+    "testsRegistered": 2,
+    "passPercent": 50,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5be31f60-ea70-471a-80d8-dad6aa118f14",
+      "title": "",
+      "fullFile": "cypress\\e2e\\subject_routing.cy.js",
+      "file": "cypress\\e2e\\subject_routing.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "5e00c94b-1332-4ee1-a7e8-11bd0065ad09",
+          "title": "Subject Routing",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Add Subject Routing - Valid fee with number",
+              "fullTitle": "Subject Routing Add Subject Routing - Valid fee with number",
+              "timedOut": null,
+              "duration": 10531,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-videos-passed\",\n  \"value\": \"cypress\\\\e2e\\\\subject_routing.cy.js\"\n}",
+              "code": "// Open Add Modal\ncy.get(\"#table1 > div > div > div.box-header > a\").click();\n// Select Grade\ncy.get(\"#grade\").select('Grade 1');\n// Select Subject\ncy.get(\"#subject\").select('Subject 1');\n// Select Teacher\ncy.get(\"#teacher\").select('Lim');\n// Enter Fee\ncy.get(\"#fee\").type('250', {\n  delay: 200\n});\n// Submit\ncy.get(\"#btnSubmit\").click();\n// Now check success message after reload\ncy.get('#insert_Success .modal-body').should('contain', 'successfully inserted');",
+              "err": {},
+              "uuid": "1cb71772-6fbe-4162-8ef5-886a3c2622d2",
+              "parentUUID": "5e00c94b-1332-4ee1-a7e8-11bd0065ad09",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Add Subject Routing - Invalid Data (Fee is not a value)",
+              "fullTitle": "Subject Routing Add Subject Routing - Invalid Data (Fee is not a value)",
+              "timedOut": null,
+              "duration": 13279,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "[\n  {\n    \"title\": \"cypress-mochawesome-reporter-videos-failed\",\n    \"value\": \"cypress\\\\e2e\\\\subject_routing.cy.js\"\n  },\n  {\n    \"title\": \"cypress-mochawesome-reporter-screenshots\",\n    \"value\": [\n      [\n        \"\\\\subject_routing.cy.js\\\\Subject Routing -- Add Subject Routing - Invalid Data (Fee is not a value) (failed).png\"\n      ]\n    ]\n  }\n]",
+              "code": "// Open Add Modal\ncy.get(\"#table1 > div > div > div.box-header > a\").click();\n// Select valid Grade, Subject, Teacher\ncy.get(\"#grade\").select('Grade 1');\ncy.get(\"#subject\").select('Subject 7');\ncy.get(\"#teacher\").select('Teacher 2');\n// Enter invalid Fee (not a number)\ncy.get(\"#fee\").type('abc', {\n  delay: 200\n});\n// Submit form\ncy.get(\"#btnSubmit\").click();\n// Force assertion: it should NOT show the success message\ncy.get('#insert_Success .modal-body').should('not.contain', 'successfully inserted');",
+              "err": {
+                "message": "AssertionError: Timed out retrying after 4000ms: expected '<div.modal-body.bgColorWhite>' not to contain 'successfully inserted'",
+                "estack": "AssertionError: Timed out retrying after 4000ms: expected '<div.modal-body.bgColorWhite>' not to contain 'successfully inserted'\n    at Context.eval (webpack://cypress-sms/./cypress/e2e/subject_routing.cy.js:54:46)",
+                "diff": null
+              },
+              "uuid": "ac5fa5e9-6cf9-4099-854a-995469dd1b00",
+              "parentUUID": "5e00c94b-1332-4ee1-a7e8-11bd0065ad09",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1cb71772-6fbe-4162-8ef5-886a3c2622d2"
+          ],
+          "failures": [
+            "ac5fa5e9-6cf9-4099-854a-995469dd1b00"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 23810,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/reports",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}
